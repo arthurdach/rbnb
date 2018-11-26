@@ -1,4 +1,4 @@
-class Equipment < ApplicationRecord
+class Material < ApplicationRecord
   belongs_to :user
   belongs_to :type
 end
