@@ -1,3 +1,18 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <p>TEST</p>
+
+<div class="container">
+  <div class="row">
+  <div class="row">
+
+  <ul>
+  <% @materials.each do |material| %>
+    <li><%= material.name  %>
+
+    </li>
+  <% end %>
+  </ul>
+
+</div>
+
