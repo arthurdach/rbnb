@@ -29,6 +29,7 @@ class MaterialsController < ApplicationController
 
   def update
     @material.update(material_params)
+    @material.user = current_user
     if @material.save
       redirect_to materials_path
     else

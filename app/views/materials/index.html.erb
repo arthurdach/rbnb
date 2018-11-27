@@ -1,33 +1,22 @@
-<div class="banner">
-  <div class="banner-content">
-    <<h1>index materials</h1>
-    <p>Liste de tout mon matériel</p>
-        <% if policy(Material).create? %>
-        <%= link_to "Ajouter un materiel", new_material_path, class: "btn btn-primary btn-lg" %>
-            <% end %>
-            <% @materials.each do |material| %>
-            <% if policy(material).edit? %>
-            <%= link_to "Update", edit_material_path(material) %>
-          <% end %>
-        <% end %>
-  </div>
+<div class="page-banner", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
+  <h1>Mon materiel</h1>
 </div>
 <div class="container">
-  <div class="row">
-  <div class="row">
-    <% @materials.each do |material| %>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <div class="card">
-          <div class="card-description">
-            <h2><%= material.description %></h2>
+  <div class="cards">
+    <% if policy(Material).create? %>
+    <ul>
+      <% @materials.each do |material| %>
+      <div class="card col-xs-3", style="background-image: url(<%= asset_path 'skis.jpg' %>)">
+          <div class="container">
+            <h2><%= material.name %></h2>
+            <p><%= material.description %></p>
+            <p><%= link_to "Description", material_path(material), class: 'card-link' %></p>
+            <p><%= link_to "Edit", edit_material_path(material.id), class: "card-link" %></p>
           </div>
-          <%= link_to "description", material_path(material), class: 'card-link' %>
-
-
+        <%= link_to "description", material_path(material), class: 'card-link' %>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </ul>
   </div>
 </div>
 
