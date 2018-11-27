@@ -2,7 +2,14 @@
   <div class="banner-content">
     <<h1>index materials</h1>
     <p>Liste de tout mon matériel</p>
-    <%= link_to "Ajouter un materiel", new_material_path, class: "btn btn-primary btn-lg" %>
+        <% if policy(Material).create? %>
+        <%= link_to "Ajouter un materiel", new_material_path, class: "btn btn-primary btn-lg" %>
+            <% end %>
+            <% @materials.each do |material| %>
+            <% if policy(material).edit? %>
+            <%= link_to "Update", edit_material_path(material) %>
+          <% end %>
+        <% end %>
   </div>
 </div>
 <div class="container">
@@ -15,6 +22,7 @@
             <h2><%= material.description %></h2>
           </div>
           <%= link_to "description", material_path(material), class: 'card-link' %>
+
 
         </div>
       </div>
