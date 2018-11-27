@@ -12,3 +12,4 @@ m = Material.create(user: u1, description: 'Ski Salomon x-Stream en excellent é
 
 l = Location.create(user: u2, material: m, start_date: Date.today, end_date: Date.today + 7.days, rating: 5)
 
+
