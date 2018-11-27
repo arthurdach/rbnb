@@ -1,5 +1,16 @@
-<h1>My locations</h1>
-<ul>
-  <% @locations.each do |location|%>
-  <li><%= location.material.description %></li>
-<% end %>
+<div class="page-banner", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
+  <h1>Mes locations</h1>
+</div>
+
+<div class="page-container">
+  <div class="container">
+    <ul>
+      <% @locations.each do |location|%>
+      <h2><%= location.material.name %> du <%= location.start_date %> au <%= location.end_date %></h2>
+      <div class="container">
+        <li><p>Catégorie: <%= location.material.category %></p></li>
+        <li><p>Description<%= location.material.description %></p></li>
+      </div>
+    <% end %>
+  </div>
+</div>

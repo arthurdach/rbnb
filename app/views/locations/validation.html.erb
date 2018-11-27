@@ -1,7 +1,12 @@
-<h1>Merci de votre location!</h1>
-<h2>Récapitulatif commande:</h2>
-<p>Produit: <%= @location.material.description %></p>
-<p>Début: <%= @location.start_date %></p>
-<p>Fin: <%= @location.end_date %></p>
-<p>Prix: </p>
-<h2>A très vite!</h2>
+<div class="page-banner", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
+</div>
+
+<div class="recap-container" text-align="center">
+  <h2>Récapitulatif commande:</h2>
+  <p>Produit: <%= @location.material.name %></p>
+  <p>Description: <%= @location.material.description %></p>
+  <p>Début: <%= @location.start_date %></p>
+  <p>Fin: <%= @location.end_date %></p>
+  <p>Prix: </p>
+  <h2>Merci et à très vite!</h2>
+</div>
