@@ -28,6 +28,7 @@ before_action :set_material, only: [:show, :destroy, :edit, :update]
 
   def update
     @material.update(material_params)
+    @material.user = current_user
     if @material.save
       redirect_to materials_path
     else
