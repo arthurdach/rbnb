@@ -1,1 +1,8 @@
 <h1>edit view materials</h1>
+
+<%= simple_form_for @material do |f|%>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.association :category %>
+  <%= f.submit %>
+<% end %>
