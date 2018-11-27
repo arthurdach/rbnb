@@ -1,7 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<p>TEST</p>
-  <% @materials.each do |material| %>
-  <%= material.description %>
-  <% end %>
+<div class="home-wrapper", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
+  <h1>SportBnb</h1>
+</div>
 
+<div class='container'>
+<!--     <p>Search bar</p>-->
+  <p>Checkout our latest awesome rentals!</p>
+    <ul>
+      <div class="card col-xs-3">
+        <% @materials.each do |material| %>
+        <div class="container">
+          <li><%= link_to material.description, material_path(material.id) %></li>
+        </div>
+        <% end %>
+      </div>
+    </ul>
+
+</div>

@@ -1,4 +1,12 @@
 class LocationsController < ApplicationController
+  def index
+    @locations = Location.all
+  end
+
+   def show
+    @location = Location.find(params[:id])
+  end
+
   def new
     @location = Location.new
     @material = Material.find(params[:material_id])
@@ -8,8 +16,10 @@ class LocationsController < ApplicationController
     @material = Material.find(params[:material_id])
     @location = Location.new(location_params)
     @location.material = @material
+    # A revenir dessus plus tard une fois que devise est installe
+    p @location.user_id = 1
     if @location.save
-      redirect_to material_path(@material)
+      redirect_to material_location_path(@material, @location)
     else
       render 'new'
     end

@@ -1,9 +1,10 @@
 <h1>Book your material</h1>
+<p> <%=  @material.description %></p>
 <%= simple_form_for [@material, @location] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.button :submit, class: "btn btn-primary"%>
 <% end %>
 
-<p><%= link_to "Back to materials", material_path %></p>
+
 
