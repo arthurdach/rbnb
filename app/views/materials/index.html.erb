@@ -1,9 +1,9 @@
 <div class="page-banner", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
   <h1>Mon materiel</h1>
 </div>
-
 <div class="container">
   <div class="cards">
+    <% if policy(Material).create? %>
     <ul>
       <% @materials.each do |material| %>
       <div class="card col-xs-3", style="background-image: url(<%= asset_path 'skis.jpg' %>)">
@@ -13,6 +13,7 @@
             <p><%= link_to "Description", material_path(material), class: 'card-link' %></p>
             <p><%= link_to "Edit", edit_material_path(material.id), class: "card-link" %></p>
           </div>
+        <%= link_to "description", material_path(material), class: 'card-link' %>
         </div>
       <% end %>
     </ul>
