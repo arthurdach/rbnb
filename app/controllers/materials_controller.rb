@@ -1,10 +1,13 @@
 class MaterialsController < ApplicationController
+before_action :set_material, only: [:show, :destroy, :edit, :update]
+
+
+
   def index
     @materials = Material.all
   end
 
   def show
-    @material = Material.find(params[:id])
   end
 
   def new
@@ -13,8 +16,8 @@ class MaterialsController < ApplicationController
 
   def create
     @material = Material.new(material_params)
-    @material.user_id = 1
-    # mettre @material.user = current_user
+    #@material.user_id = 1
+   @material.user = current_user
     if @material.save
 
       redirect_to materials_path
@@ -43,6 +46,11 @@ class MaterialsController < ApplicationController
   private
 
   def material_params
-    params.require(:material).permit(:type_id, :user_id, :description)
+    params.require(:material).permit(:category, :name, :user_id, :description)
   end
+
+  def set_material
+    @material = Material.find(params[:id])
+ end
+
 end

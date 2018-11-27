@@ -1,6 +1,36 @@
 <h1>L'équipement</h1>
 <%= @material.description %>
-<%= link_to "Back to Home",root_path  %>
-<%= link_to "Rent this material", new_material_location_path(@material)  %>
+<%= link_to "Retour à la page d'accueil",root_path  %>
+<%= link_to "Louer ce matériel", new_material_location_path(@material)  %>
+<%= link_to "Supprimer cette annonce", new_material_location_path(@material)  %>
 
+<div class="container material-page">
+  <div class="material-header">
+    <h1> <%= @material.description %></h1>
+    <%= link_to "Back", material_path %>
+  </div>
+  <div class="material-infos">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <ul>
+                <li>
+                  <%= @material.name %>
+                  <%= @material.description %>
+                  <%= @material.category %>
+                  <%#= @material.type %>
+                </li>
 
+            </ul>
+        </div>
+      </div>
+    </div>
+  <div class="row actions-card">
+    <div class="col-12">
+      <div>
+        <%= link_to "Edit", edit_material_path(@material), class: "btn btn-success" %>
+        <%= link_to "Delete", material_path(@material),method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+
+</div>

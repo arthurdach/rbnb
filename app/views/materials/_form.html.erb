@@ -1,9 +1,10 @@
 
 
 <%= simple_form_for [@material] do |f| %>
-    <%= f.input :description %>
-    <%= f.association :type %>
-    <%= f.submit %>
-  <% end %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :category, collection: Material::CATEGORIES %>
+  <%= f.submit %>
+<% end %>
 
 

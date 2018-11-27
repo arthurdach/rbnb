@@ -1,2 +1,25 @@
-<<h1>index materials</h1>
+<div class="banner">
+  <div class="banner-content">
+    <<h1>index materials</h1>
+    <p>Liste de tout mon matériel</p>
+    <%= link_to "Ajouter un materiel", new_material_path, class: "btn btn-primary btn-lg" %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+  <div class="row">
+    <% @materials.each do |material| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card">
+          <div class="card-description">
+            <h2><%= material.description %></h2>
+          </div>
+          <%= link_to "description", material_path(material), class: 'card-link' %>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+  </div>
+</div>
 
