@@ -5,11 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-u1 = User.create(email: 'arthur@sport-rbnb.com', password: '123456')
-u2 = User.create(email: 'martin@sport-rbnb.com', password: '123456')
-t = Type.create(name: 'SKI')
-t2 = Type.create(name: 'SNOW')
-m = Material.create(user: u1, description: 'Ski Salomon x-Stream en excellent état', type: Type.first, available: false)
+puts "Destroying users"
+User.destroy_all
 
-l = Location.create(user: u2, material: m, start_date: Date.today, end_date: Date.today + 7.days, rating: 5)
+puts "Creating users..."
+
+user_1 = User.create(email: 'arthur@sport-rbnb.com', password: '123456')
+user_2 = User.create(email: 'martin@sport-rbnb.com', password: '123456')
+
+puts "Creating materials..."
+CATEGORIES = %w[ski surf kite velo snowboard skateboard paddle].freeze
+material = Material.create!(
+  user: user_1,
+  name: "Arthur Martin Electrolux",
+  description: 'Ski Salomon x-Stream en excellent état',
+  category: CATEGORIES.sample,
+  available: false
+)
+
+puts "Creating locations"
+l = Location.create!(
+  user: user_2,
+  material: material,
+  start_date: Date.today,
+  end_date: Date.today + 7.days,
+  rating: 5
+)
+
+puts "seeds are done"
 
