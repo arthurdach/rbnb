@@ -1,6 +1,9 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.all
+    puts "All"
+    p @locations = Location.all
+    p current_user
+    p @locations = Location.where(user: current_user)
   end
 
    def show
@@ -17,12 +20,16 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     @location.material = @material
     # A revenir dessus plus tard une fois que devise est installe
-    p @location.user_id = 1
+    @location.user = current_user
     if @location.save
-      redirect_to material_location_path(@material, @location)
+      redirect_to material_validation_path(@material, @location)
     else
       render 'new'
     end
+  end
+
+  def validation
+    @location = Location.find(params[:id])
   end
 
   private

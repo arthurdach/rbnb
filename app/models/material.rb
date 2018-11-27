@@ -1,13 +1,11 @@
 class Material < ApplicationRecord
+  CATEGORIES = %w[ski surf kite velo snowboard skateboard paddle].freeze
+
   belongs_to :user
-  # belongs_to :type
-  validates :category, inclusion: { in: CATEGORIES, message: "%{value} is not a valid category" }
+  has_many :locations, dependent: :destroy
 
-  CATEGORIES = [
-    "sky",
-    "surf",
-    "kitesurf"
-  ]
-
-
+  validates :category, inclusion: {
+    in: CATEGORIES,
+    message: "%{value} ne fait pas partie de la liste des catégories autorisées"
+  }
 end
