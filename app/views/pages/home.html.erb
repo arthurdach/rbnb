@@ -4,15 +4,17 @@
 
 <div class='container'>
 <!--     <p>Search bar</p>-->
-  <p>Checkout our latest awesome rentals!</p>
+  <p class="text-center">Checkout our latest awesome rentals!</p>
+  <div class="cards">
     <ul>
-      <div class="card col-xs-3">
         <% @materials.each do |material| %>
+      <div class="card col-xs-3", style="background-image: url(<%= asset_path 'skis.jpg' %>)">
         <div class="container">
-          <li><%= link_to material.description, material_path(material.id) %></li>
+          <li><p><%= link_to material.description, material_path(material.id) %></p></li>
         </div>
-        <% end %>
       </div>
-    </ul>
+        <% end %>
+      </ul>
+    </div>
 
 </div>
