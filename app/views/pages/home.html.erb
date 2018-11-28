@@ -46,7 +46,7 @@
       <% @materials.each do |material| %>
         <div
           class="card col-xs-3",
-          style="background-image: url('<%= material.photo ? cl_image_path(material.photo) : "" %>')">
+          style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
            <div class="container">
             <p style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0, 0.7); font-size: 24px"><%= material.name %></p>
           </div>
