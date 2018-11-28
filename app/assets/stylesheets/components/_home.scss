@@ -1,0 +1,46 @@
+.form-inline {
+  background: transparent;
+  display: inline-block;
+  align-item: center;
+}
+
+.mini-banner {
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 15vh;
+}
+
+
+.list-inline > li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+    color: #ffffff;
+    background-color: #469AE0;
+    border-color: #469AE0;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
