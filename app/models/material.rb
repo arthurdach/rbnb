@@ -1,6 +1,5 @@
 class Material < ApplicationRecord
   CATEGORIES = %w[ski surf kite velo snowboard skateboard paddle].freeze
-
   belongs_to :user
   has_many :locations, dependent: :destroy
 
@@ -8,11 +7,5 @@ class Material < ApplicationRecord
     in: CATEGORIES,
     message: "%{value} ne fait pas partie de la liste des catégories autorisées"
   }
-
-
-end
-
-class Article < ApplicationRecord
-  mount_uploader :photo, PhotoUploader
 end
 
