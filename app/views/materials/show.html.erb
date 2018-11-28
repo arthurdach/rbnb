@@ -1,37 +1,22 @@
-<h1>L'équipement</h1>
-<%= @material.description %>
-<%= link_to "Retour à la page d'accueil",root_path  %>
-<%= link_to "Louer ce matériel", new_material_location_path(@material)  %>
-<%= link_to "Supprimer cette annonce", new_material_location_path(@material)  %>
 
-<div class="container material-page">
-  <div class="material-header">
-    <h1> <%= @material.description %></h1>
-    <%= link_to "Back", material_path %>
-  </div>
-  <div class="material-infos">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <%= cl_image_tag @material.photo, height: 300, width: 400, crop: :fill %>
-            <ul>
-                <li>
-                  <%= @material.name %>
-                  <%= @material.description %>
-                  <%= @material.category %>
-                  <%#= @material.type %>
-                </li>
+<div class="page-banner", style="background-image: url(<%= cl_image_tag @material.photo, height: 300, width: 400, crop: :fill %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
+  <h1><%= @material.name %></h1>
+</div>
 
-            </ul>
-        </div>
-      </div>
-    </div>
-  <div class="row actions-card">
-    <div class="col-12">
-      <div>
-        <%= link_to "Edit", edit_material_path(@material), class: "btn btn-success" %>
-        <%= link_to "Delete", material_path(@material),method: :delete, class: "btn btn-danger" %>
+
+<div class="page-container">
+  <div class="container">
+    <h1> <%= @material.name %></h1>
+    <p> <%= @material.category %></p>
+    <p> <%= @material.description %></p>
+
+        <% if policy(@material).edit? %>
+          <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
+        <% end %>
+        <% if policy(@material).destroy? %>
+          <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
+        <% end %>
       </div>
     </div>
   </div>
-
 </div>
