@@ -38,20 +38,21 @@
    </ul>
  </div>
 
+<h2 class="text-center">Découvrez nos derniers produits</h2>
 <div class='page-container'>
-  <h2 class="text-center">Découvrez nos derniers produits</h2>
 <!--     <p>Search bar</p>-->
   <div class="cards">
     <ul>
-        <% @materials.each do |material| %>
-      <div class="card col-xs-3", style="background-image: url('<%= cl_image_path material.photo %>')">
-         <div class="container">
-          <li><p><%= link_to material.description, material_path(material.id) %></p></li>
+      <% @materials.each do |material| %>
+        <div class="card col-xs-3", style="background-image: url('<%= cl_image_path material.photo %>')">
+           <div class="container">
+            <p style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0, 0.7); font-size: 24px"><%= material.name %></p>
+          </div>
+          <%= link_to "", material_path(material), class: "card-link" %>
         </div>
-      </div>
-        <% end %>
-      </ul>
-    </div>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <div class="container-fluid">
