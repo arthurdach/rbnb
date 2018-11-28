@@ -61,69 +61,72 @@ Location.destroy_all
 # Review.destroy_all
 
 puts 'generating the best users with password 123456 '
-vincent = User.create!(email: "vincent@sport-rbnb.com",
- password: "123456")
- # first_name: "Jeremy",
- # last_name: "Jouffroy",
- # phone_number: "0683411488",
- address: "26 rue Edouard Vaillant, 93140 Bondy, France")
-arthur = User.create!(email: "arthur@sport-rbnb.com",
- password: "123456")
- # first_name: "Benoit",
- # last_name: "Delest",
- # phone_number: "0609216014",
- address: "3 rue de la Joncquiere, 75017 Paris, France")
-martin = User.create!(email: "martin@sport-rbnb.com",
- password: "123456")
- # first_name: "Cécile",
- # last_name: "Dezy",
- # phone_number: "0677136554",
- address: "6 rue Euryale Dehaynin, 75019 Paris, France "
+vincent = User.create!(
+  email: "vincent@sport-rbnb.com",
+  password: "123456",
+  address: "26 rue Edouard Vaillant, 93140 Bondy, France"
+ )
+arthur = User.create!(
+  email: "arthur@sport-rbnb.com",
+  password: "123456",
+  address: "3 rue de la Joncquiere, 75017 Paris, France"
+)
+martin = User.create!(
+  email: "martin@sport-rbnb.com",
+  password: "123456",
+  address: "6 rue Euryale Dehaynin, 75019 Paris, France"
+)
 
-thibault = User.create!(email: "thibault@sport-rbnb.com",
- password: "123456")
- # first_name: "Christophe",
- # last_name: "Noujaim",
- # phone_number: "0663420512",
- address: "16 villa Gaudelet, 75011 Paris, France")
+thibault = User.create!(
+  email: "thibault@sport-rbnb.com",
+  password: "123456",
+  address: "16 villa Gaudelet, 75011 Paris, France"
+)
 
 puts "4 users created"
-
 
 puts "creating 1 material for each user"
 CATEGORIES = %w[ski surf kite velo snowboard skateboard paddle].freeze
 
-matOne = Material.new(name: "surf surfactory",
+matOne = Material.new(
+  name: "surf surfactory",
   description: "surf 7.1 idéal pour débutant",
   # available = true,
-  category: "surf")
+  category: "surf"
+)
 matOne.user_id = vincent.id
 matOne.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543414845/tyler-nix-711169-unsplash.jpg"
 
 matOne.save!
 
-matTwo = Material.new(name: "surf surfactory",
+matTwo = Material.new(
+  name: "surf surfactory",
   description: "surf 6 idéal pour expert",
   # available = true,
-  category: "surf")
+  category: "surf"
+)
 matTwo.user_id = arthur.id
 matTwo.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543403286/l7pgx3q0knzfbc2rjkfd.jpg"
 
 matTwo.save!
 
-matThree = Material.new(name: "ski salomon 2010",
+matThree = Material.new(
+  name: "ski salomon 2010",
   description: "ski utilisé environ 2 mois",
   # available = true,
-  category: "ski")
+  category: "ski"
+)
 matThree.user_id = martin.id
 matThree.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543405478/ac9gk9p9qpiamitlmztz.jpg"
 
 matThree.save!
 
-matFour = Material.new(name: "skateboard princess",
+matFour = Material.new(
+  name: "skateboard princess",
   description: "skakeboard en bonne état ayant servi environ 50h",
   # available = true,
-  category: "skateboard")
+  category: "skateboard"
+)
 matFour.user_id = thibault.id
 matFour.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543414749/max-tarkhov-737999-unsplash.jpg"
 
@@ -135,9 +138,9 @@ puts "4 materials saved"
 puts 'Creating a locations from vincent materials to arthur.'
 
 locationOne = Location.new(
-start_date: Date.today,
-end_date: Date.today
-  )
+  start_date: Date.today,
+  end_date: Date.today
+)
 # locationOne.duration = (locationOne.maxDate - locationOne.minDate).to_i
 locationOne.material_id = matOne.id
 # locationOne.total_price = (matOne.daily_price * locationOne.duration).to_i
@@ -150,9 +153,9 @@ locationOne.save!
 puts 'Creating a locations from martin materials to thibault.'
 
 locationTwo = Location.new(
-start_date: Date.today,
-end_date: Date.today
-  )
+  start_date: Date.today,
+  end_date: Date.today
+)
 # locationTwo.duration = (locationTwo.maxDate - locationTwo.minDate).to_i
 locationTwo.material_id = matTwo.id
 # locationOne.total_price = (matOne.daily_price * locationOne.duration).to_i
