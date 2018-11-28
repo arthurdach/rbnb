@@ -34,3 +34,7 @@ l = Location.create!(
 
 puts "seeds are done"
 
+url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
+material = Material.new(name: 'NES', description: "A great console")
+material.remote_photo_url = url
+material.save

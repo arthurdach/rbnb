@@ -2,7 +2,12 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :category, collection: Material::CATEGORIES %>
+
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+
   <%= f.button :submit, class: "btn-form btn-primary" %>
+
 <% end %>
 
 
