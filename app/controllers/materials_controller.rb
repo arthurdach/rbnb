@@ -16,7 +16,6 @@ class MaterialsController < ApplicationController
 
   def create
     @material = Material.new(material_params)
-    #@material.user_id = 1
     @material.user = current_user
     if @material.save
 
