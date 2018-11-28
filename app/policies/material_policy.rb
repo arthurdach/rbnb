@@ -2,18 +2,18 @@ class MaterialPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
       # For a multi-tenant SaaS app, you may want to use:
       # scope.where(user: user)
     end
   end
 
-  def new
+  def new?
     return true
   end
 
 
-  def index
+  def index?
     return true
   end
 
@@ -34,6 +34,6 @@ class MaterialPolicy < ApplicationPolicy
   end
 
   def edit?
-     return true
+     update?
   end
 end
