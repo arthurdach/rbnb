@@ -9,16 +9,17 @@
     <p> <%= @material.category %></p>
     <p> <%= @material.description %></p>
 
-        <% if policy(@material).edit? %>
-          <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
-        <% end %>
-        <% if policy(@material).destroy? %>
-          <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
-        <% end %>
-        <% if policy(@material.locations.new).new? %>
-          <btn><%= link_to "Réserver", new_material_location_path(@material) %></btn>
-        <% end %>
-      </div>
-    </div>
+    <% if policy(@material).edit? %>
+      <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
+    <% end %>
+    <% if policy(@material).destroy? %>
+      <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
+    <% end %>
+    <% if policy(@material.locations.new).new? %>
+      <btn><%= link_to "Réserver", new_material_location_path(@material) %></btn>
+    <% end %>
   </div>
+   
+  <div id="map" data-markers=<%= @markers.to_json %> data-mapbox-api-key=<%= ENV["MAPBOX_API_KEY"] %> style="width: 50%; height: 400px"></div>
 </div>
+
