@@ -6,15 +6,16 @@
   <div class="cards">
     <ul>
       <% @materials.each do |material| %>
-      <div class="card col-xs-3", style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
+        <div class="card col-xs-3", style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
           <div class="container">
             <h2><%= material.name %></h2>
             <p><%= material.description %></p>
-            <p><%= link_to "Description", material_path(material), class: 'card-link' %></p>
-            <p><%= link_to "Edit", edit_material_path(material.id), class: "card-link" %></p>
+            <p>
+              <%= link_to "", material_path(material), class: 'card-link' %>
+            </p>
           </div>
         </div>
-        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>
