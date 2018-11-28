@@ -13,6 +13,9 @@
         <% if policy(@material).destroy? %>
           <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
         <% end %>
+        <% if policy(@material.locations.new).new? %>
+          <%= link_to "book", new_material_location_path(@material) %>
+        <% end %>
       </div>
     </div>
   </div>
