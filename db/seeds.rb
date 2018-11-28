@@ -62,26 +62,26 @@ Location.destroy_all
 
 puts 'generating the best users with password 123456 '
 vincent = User.create!(email: "vincent@sport-rbnb.com",
- password: "123456")
+ password: "123456",
  # first_name: "Jeremy",
  # last_name: "Jouffroy",
  # phone_number: "0683411488",
  address: "26 rue Edouard Vaillant, 93140 Bondy, France")
 arthur = User.create!(email: "arthur@sport-rbnb.com",
- password: "123456")
+ password: "123456",
  # first_name: "Benoit",
  # last_name: "Delest",
  # phone_number: "0609216014",
  address: "3 rue de la Joncquiere, 75017 Paris, France")
 martin = User.create!(email: "martin@sport-rbnb.com",
- password: "123456")
+ password: "123456",
  # first_name: "Cécile",
  # last_name: "Dezy",
  # phone_number: "0677136554",
- address: "6 rue Euryale Dehaynin, 75019 Paris, France "
+ address: "6 rue Euryale Dehaynin, 75019 Paris, France ")
 
-thibault = User.create!(email: "thibault@sport-rbnb.com",
- password: "123456")
+thibaut = User.create!(email: "thibaut@sport-rbnb.com",
+ password: "123456",
  # first_name: "Christophe",
  # last_name: "Noujaim",
  # phone_number: "0663420512",
