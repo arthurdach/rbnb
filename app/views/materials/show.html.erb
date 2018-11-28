@@ -3,23 +3,22 @@
 </div>
 
 
-
 <div class="page-container">
   <div class="container">
     <h1> <%= @material.name %></h1>
     <p> <%= @material.category %></p>
     <p> <%= @material.description %></p>
 
-        <% if policy(@material).edit? %>
-          <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
-        <% end %>
-        <% if policy(@material).destroy? %>
-          <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
-        <% end %>
-        <% if policy(@material.locations.new).new? %>
-          <%= link_to "book", new_material_location_path(@material) %>
-        <% end %>
-      </div>
-    </div>
+    <% if policy(@material).edit? %>
+      <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
+    <% end %>
+    <% if policy(@material).destroy? %>
+      <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
+    <% end %>
+    <% if policy(@material.locations.new).new? %>
+      <%= link_to "book", new_material_location_path(@material) %>
+    <% end %>
   </div>
+  <div id="map" data-markers=<%= @markers.to_json %> data-mapbox-api-key=<%= ENV["MAPBOX_API_KEY"] %> style="width: 50%; height: 400px"></div>
 </div>
+

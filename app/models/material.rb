@@ -8,6 +8,8 @@ class Material < ApplicationRecord
     in: CATEGORIES,
     message: "%{value} ne fait pas partie de la liste des catégories autorisées"
   }
+
+
 end
 
 class Article < ApplicationRecord
