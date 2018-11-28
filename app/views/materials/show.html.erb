@@ -12,6 +12,7 @@
   <div class="material-infos">
     <div class="row">
         <div class="col-xs-12 col-sm-6">
+          <%= cl_image_tag @material.photo, height: 300, width: 400, crop: :fill %>
             <ul>
                 <li>
                   <%= @material.name %>
