@@ -7,5 +7,5 @@ class Material < ApplicationRecord
     in: CATEGORIES,
     message: "%{value} ne fait pas partie de la liste des catégories autorisées"
   }
+  mount_uploader :photo, PhotoUploader
 end
-
