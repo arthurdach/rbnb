@@ -39,16 +39,15 @@
  </div>
 
 <div class='page-container'>
-<!--     <p>Search bar</p>-->
   <h2 class="text-center">Découvrez nos derniers produits</h2>
+<!--     <p>Search bar</p>-->
   <div class="cards">
     <ul>
         <% @materials.each do |material| %>
-      <div class="card col-xs-3", style="background-image: url('<%= cl_image_path("surf.jpg") %>')">
-
-<!--         <div class="container">
+      <div class="card col-xs-3", style="background-image: url('<%= cl_image_path material.photo %>')">
+         <div class="container">
           <li><p><%= link_to material.description, material_path(material.id) %></p></li>
-        </div> -->
+        </div>
       </div>
         <% end %>
       </ul>
@@ -61,9 +60,9 @@
       <br >
       <h2>Gagnez de l'argent en louant votre matériel de sport</h1>
       <br >
-      <!-- <a href="">
+      <a href="">
       <button class="btn btn-primary">Louer mon matériel</button>
-      </a> -->
+      </a>
       <btn class="btn"><%= link_to "Louer mon matériel", new_material_path(@material) %></btn>
   </div>
  </div>
