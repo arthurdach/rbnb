@@ -8,10 +8,12 @@
   width: 300px;  /* Or whatever */
   height: 300px; /* Or whatever */
   margin: 1px thin solid lightgrey;
-  background-size: cover;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
   margin: 20px;
+  background-size: cover !important;
+  background-position: center;
+  color: white;
   position: relative;
 }
 
@@ -28,3 +30,5 @@
   background: black;
   opacity: 0;
 }
+
+

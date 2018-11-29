@@ -54,7 +54,6 @@
 <div class='page-container'>
 <!--     <p>Search bar</p>-->
   <div class="cards">
-    <ul>
       <% @materials.each do |material| %>
         <div
           class="card col-xs-3",
@@ -65,7 +64,6 @@
           <%= link_to "", material_path(material), class: "card-link" %>
         </div>
       <% end %>
-    </ul>
   </div>
 </div>
 
@@ -75,10 +73,21 @@
       <br >
       <h2>Gagnez de l'argent en louant votre matériel de sport</h1>
       <br >
-      <a href="">
-      <button class="btn btn-primary">Louer mon matériel</button>
-      </a>
-      <btn class="btn"><%= link_to "Louer mon matériel", new_material_path(@material) %></btn>
+      <%= link_to "Louer mon matériel", new_material_path(@material), class: "btn btn-primary" %>
   </div>
  </div>
 </div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
+
