@@ -1,0 +1,13 @@
+<div class="page-banner", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
+  <h1>Notes de mes matériels</h1>
+</div>
+
+<div class="page-container">
+  <div class="container">
+    <% @material_reviews.each do |review|%>
+      <h2><%= material_reviews.material.name %></h2>
+      <h2><%= material_reviews.description %></h2>
+      <h2><%= material_reviews.rating %></h2>
+      <% end %>
+  </div>
+</div>
