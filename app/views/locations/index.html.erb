@@ -2,16 +2,21 @@
   <h1>Mes locations</h1>
 </div>
 
-<div class="page-container">
-  <div class="container">
-    <ul>
-      <% @locations.each do |location|%>
-      <h2><%= location.material.name %> du <%= location.start_date %> au <%= location.end_date %></h2>
-      <div class="container">
-        <li><p>Catégorie: <%= location.material.category %></p></li>
-        <li><p>Description: <%= location.material.description %></p></li>
-        <li><p>Prix: <%= location.material.price %> €</p></li>
+<div class="cards">
+  <ul>
+    <% @locations.each do |location|%>
+    <div class="card" style="width: 800px; color:black;margin: 5px;padding: 15px;">
+      <div class="card-body" >
+        <h3 class="card-title" style="font-size: 25px"><%= location.material.name %> du <%= location.start_date %> au <%= location.end_date %></h3>
+        <p class="card-text">Catégorie: <%= location.material.category %></p>
+        <p class="card-text">Description: <%= location.material.description %></p>
+        <p class="card-text">Prix: <%= location.material.price %> €/jour </p>
+        <a><%= link_to "Noter", new_material_material_review_path(location.material), class: "btn btn-success" %></a>
+        <a><%= link_to "Relouer", new_material_location_path(location.material), class: "btn btn-primary" %></a>
       </div>
+    </div>
     <% end %>
-  </div>
+  </ul>
 </div>
+
+

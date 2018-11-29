@@ -5,7 +5,8 @@
 
 
 <div class="page-container">
-  <div class="container" style="width: 400px; margin: 0 auto;">
+  <div class="container" style="width: 700px; margin: 0 auto;">
+    <h3> <%=  @material.name %></h3>
     <p> <%=  @material.description %></p>
 
     <%= simple_form_for [@material, @location] do |f| %>
