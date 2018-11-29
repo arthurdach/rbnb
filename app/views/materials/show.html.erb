@@ -1,7 +1,5 @@
-<div class="page-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @material.photo, height: 300, width: 400, crop: :fill %>')">
-  <h1><%= @material.name %></h1>
+<div class="card col-xs-3", style="background-image: url('<%= @material.photo.present? ? cl_image_path(material.photo, height: 300, width: 400, crop: :fill) : "" %>')">
 </div>
-
 
 <div class="page-container">
   <div class="container">
@@ -19,7 +17,7 @@
       <btn><%= link_to "Réserver", new_material_location_path(@material) %></btn>
     <% end %>
   </div>
-   
+
   <div id="map" data-markers=<%= @markers.to_json %> data-mapbox-api-key=<%= ENV["MAPBOX_API_KEY"] %> style="width: 50%; height: 400px"></div>
 </div>
 

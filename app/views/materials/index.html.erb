@@ -1,20 +1,66 @@
-<div class="page-banner", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
-  <h1>Mon materiel</h1>
+  <div class="small-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path('louer-matos_1.jpg') %>);">
+  <div class="card-description ">
+    <h1> Mon matériel en location</h1>
+  </div>
+  <div class="img-user-show text-center">
+    <img class="avatar-large" src="https://res.cloudinary.com/do325p9t0/image/upload/v1535120034/jb4eoupp2gydjohjcwtf.jpg">
+  </div>
 </div>
+
+
+<% if @games.empty? %>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 centered">
+        <div class="button-show-card">
+          <p>Gagner de l'argent en louant votre materiel qui dort dans votre gagrage</p>
+         <%= link_to "Louer mon matériel", new_material_path(@material) class: "btn btn-success" %>
+        </div>
+      </div>
+    </div>
+
+
+
+</div>
+
+<% else %>
+    <div class="row">
+      <% @games.each do |game| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: url('<%= cl_image_path game.photo, height: "300", width: "400", quality:"auto:low"%>')">
+            <%= link_to game_path(game) do %>
+              <span class="top-link"></span>
+            <% end %>
+              <div class="card-category"><%= game.user.first_name %></div>
+              <div class="card-description">
+                <h2><%= game.title %></h2>
+                <p><%= game.description %></p>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  <% end %>
+
+</div>
+
+
+
 
 <div class="container">
   <div class="cards">
     <ul>
       <% @materials.each do |material| %>
-      <div class="card col-xs-3", style="background-image: url(<%= asset_path 'skis.jpg' %>)">
+        <div class="card col-xs-3", style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
           <div class="container">
             <h2><%= material.name %></h2>
             <p><%= material.description %></p>
-            <p><%= link_to "Description", material_path(material), class: 'card-link' %></p>
-            <p><%= link_to "Edit", edit_material_path(material.id), class: "card-link" %></p>
+            <p>
+              <%= link_to "", material_path(material), class: 'card-link' %>
+            </p>
           </div>
         </div>
-        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>
