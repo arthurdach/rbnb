@@ -1,5 +1,5 @@
-<div class="card col-xs-3", style="background-image: url('<%= @material.photo.present? ? cl_image_path(@material.photo, height: 300, width: 400, crop: :fill) : "" %>')">
-</div>
+  <div class="small-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path('louer-matos_1.jpg') %>);">
+  </div>
 
 <div class="page-container">
   <div class="container">
@@ -7,7 +7,7 @@
     <p> <%= @material.category %></p>
     <p> <%= @material.description %></p>
     <p> <%= @material.price %> €</p>
-    
+
       <% @reviews.each do |review|%>
       Note: <%= review.rating.times do %>
         <span class="fa fa-star checked"></span>
@@ -18,7 +18,7 @@
           <br />
       <% end %>
     <br />
-    
+
     <% if policy(@material).edit? %>
       <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
     <% end %>
