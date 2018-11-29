@@ -39,9 +39,9 @@ puts "creating 1 material for each user"
 CATEGORIES = %w[ski surf kite velo snowboard skateboard paddle].freeze
 
 matOne = Material.new(
-  name: "surf factory",
-  description: "surf 7.1 idéal pour débutant",
-  # available = true,
+  name: "Surf factory évolutive 7.1",
+  description: "Planche de surf de la marque Surf Factory. Taille 7.1, idéal pour débutant. Très bon état général, dispo à domicile",
+  available = true,
   category: "surf",
   price: "16.00"
 )
@@ -51,22 +51,22 @@ matOne.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v15
 matOne.save!
 
 matTwo = Material.new(
-  name: "surf bestfactory",
-  description: "surf 6 idéal pour expert",
-  # available = true,
+  name: "Surf Mini Malibu 8.6",
+  description: "Surf 8.6 idéal pour expert. Très bon état général, dispo à domicile. Possibilité de me déplacer en région parisienne sur demande.",
+  available = true,
   category: "surf",
   price: "17.00"
 )
 matTwo.user_id = arthur.id
-matTwo.remote_photo_url = "http://glisse-proshop.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/i/firewire-carbo-hydro.jpg"
 
+matTwo.remote_photo_url = "http://glisse-proshop.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/i/firewire-carbo-hydro.jpg"
 
 matTwo.save!
 
 matThree = Material.new(
-  name: "ski salomon 2010",
-  description: "ski utilisé environ 2 mois",
-  # available = true,
+  name: "Skis Salomon 2010",
+  description: "Skis utilisés environ 2 mois. Comme neuf. Visible sur demande sur Paris si besoin. Possibilité de conseils si nécessaire. Bon ride!",
+  available = true,
   category: "ski",
   price: "18.00"
 )
@@ -76,9 +76,9 @@ matThree.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v
 matThree.save!
 
 matFour = Material.new(
-  name: "skateboard princess",
-  description: "skakeboard en bonne état ayant servi environ 50h",
-  # available = true,
+  name: "Skateboard Princess",
+  description: "Skateboard en bon état ayant servi environ 50h. Très bon état général, dispo à domicile. Equippement de protection égaelement dispo si besoin.",
+  available = true,
   category: "skateboard",
   price: "19.00"
 )

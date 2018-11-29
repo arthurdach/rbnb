@@ -7,6 +7,7 @@ class MaterialsController < ApplicationController
 
   def show
     authorize @material
+    @reviews = @material.material_reviews
     @user = @material.user
     @markers = [ { lat: @user.latitude, lng: @user.longitude } ]
   end

@@ -5,14 +5,22 @@
 
   <form class="form-inline" class="text-center">
     <label class="sr-only" for="inlineFormInput">Categorie</label>
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Categorie">
 
-    <label class="sr-only" for="inlineFormInput">Lieu</label>
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Où ?">
+    <%= form_tag materials_path, method: :get do %>
+      <%= text_field_tag :category,
+        params[:category],
+        class: "form-control",
+        placeholder: "Catégorie ?"
+      %>
 
-      <label class="sr-only" for="inlineFormInput">Date</label>
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Quand ?">
-      <button type="submit" class="btn btn-success">Rechercher</button>
+      <%= text_field_tag :address,
+        params[:address],
+        class: "form-control",
+        placeholder: "Lieu ?"
+      %>
+
+      <%= button_tag "Rechercher", class: "btn btn-success" %>
+    <% end %>
   </div>
 </form>
 
@@ -38,7 +46,11 @@
    </ul>
  </div>
 
-<h2 class="text-center">Découvrez nos derniers produits</h2>
+<% if params[:category].present? || params[:address].present? %>
+  <h2 class="text-center">WAOU !!!! Voilà le matériel de dispo dans ta zone de recherche</h2>
+<% else %>
+  <h2 class="text-center">Découvrez nos derniers produits</h2>
+<% end %>
 <div class='page-container'>
 <!--     <p>Search bar</p>-->
   <div class="cards">
