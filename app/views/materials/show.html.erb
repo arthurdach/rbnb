@@ -5,7 +5,6 @@
   <div class="container">
     <h1> <%= @material.name %></h1>
     <p> <%= @material.category %></p>
-
       <% @reviews.each do |review|%>
       Note: <%= review.rating.times do %>
         <span class="fa fa-star checked"></span>
@@ -33,4 +32,6 @@
   <div id="map" data-markers=<%= @markers.to_json %> data-mapbox-api-key=<%= ENV["MAPBOX_API_KEY"] %> style="width: 50%; height: 400px">
   </div>
 </div>
+
+
 

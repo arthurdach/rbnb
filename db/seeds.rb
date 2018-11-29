@@ -106,6 +106,7 @@ matTwo = Material.new(
   category: "surf"
 )
 matTwo.user_id = arthur.id
+
 matTwo.remote_photo_url = "http://glisse-proshop.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/i/firewire-carbo-hydro.jpg"
 
 matTwo.save!
