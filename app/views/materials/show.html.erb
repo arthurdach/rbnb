@@ -5,6 +5,9 @@
   <div class="container">
     <h1> <%= @material.name %></h1>
     <p> <%= @material.category %></p>
+    <p> <%= @material.description %></p>
+    <p> <%= @material.price %> €</p>
+    
       <% @reviews.each do |review|%>
       Note: <%= review.rating.times do %>
         <span class="fa fa-star checked"></span>
@@ -15,6 +18,7 @@
           <br />
       <% end %>
     <br />
+    
     <% if policy(@material).edit? %>
       <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
     <% end %>

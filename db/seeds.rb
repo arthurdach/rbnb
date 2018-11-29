@@ -1,56 +1,5 @@
 require 'faker'
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
-# puts "Destroying users"
-# User.destroy_all
-
-# puts "Creating users..."
-
-# user_1 = User.create(email: 'arthur@sport-rbnb.com', password: '123456')
-# user_2 = User.create(email: 'martin@sport-rbnb.com', password: '123456')
-
-# puts "Creating materials..."
-# # CATEGORIES = %w[ski surf kite velo snowboard skateboard paddle].freeze
-# material = Material.create!(
-#   user: user_1,
-#   name: "Arthur Martin Electrolux",
-#   description: 'Ski Salomon x-Stream en excellent état',
-#   category: CATEGORIES.sample,
-#   available: false
-# )
-
-# puts "Creating locations"
-# l = Location.create!(
-#   user: user_2,
-#   material: material,
-#   start_date: Date.today,
-#   end_date: Date.today + 7.days,
-#   rating: 5
-# )
-
-# puts "seeds are done"
-
-# url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
-# material = Material.new(name: 'NES', description: "A great console")
-# material.remote_photo_url = url
-# material.save
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts 'Cleaning database of users...'
 User.destroy_all
 puts 'Cleaning database of material...'
@@ -59,6 +8,7 @@ puts 'Cleaning database of location...'
 Location.destroy_all
 # puts 'Cleaning database of Reviews...'
 # Review.destroy_all
+
 
 puts 'generating the best users with password 123456 '
 vincent = User.create!(
@@ -69,7 +19,7 @@ vincent = User.create!(
 arthur = User.create!(
   email: "arthur@sport-rbnb.com",
   password: "123456",
-  address: "3 rue de la Joncquiere, 75017 Paris, France"
+  address: "3 rue de la Pompe, 75016 Paris, France"
 )
 martin = User.create!(
   email: "martin@sport-rbnb.com",
@@ -89,10 +39,11 @@ puts "creating 1 material for each user"
 CATEGORIES = %w[ski surf kite velo snowboard skateboard paddle].freeze
 
 matOne = Material.new(
-  name: "surf surfactory",
-  description: "surf 7.1 idéal pour débutant",
-  # available = true,
-  category: "surf"
+  name: "Surf factory évolutive 7.1",
+  description: "Planche de surf de la marque Surf Factory. Taille 7.1, idéal pour débutant. Très bon état général, dispo à domicile",
+  available = true,
+  category: "surf",
+  price: "16.00"
 )
 matOne.user_id = vincent.id
 matOne.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543414845/tyler-nix-711169-unsplash.jpg"
@@ -100,10 +51,11 @@ matOne.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v15
 matOne.save!
 
 matTwo = Material.new(
-  name: "surf surfactory",
-  description: "surf 6 idéal pour expert",
-  # available = true,
-  category: "surf"
+  name: "Surf Mini Malibu 8.6",
+  description: "Surf 8.6 idéal pour expert. Très bon état général, dispo à domicile. Possibilité de me déplacer en région parisienne sur demande.",
+  available = true,
+  category: "surf",
+  price: "17.00"
 )
 matTwo.user_id = arthur.id
 
@@ -112,10 +64,11 @@ matTwo.remote_photo_url = "http://glisse-proshop.com/media/catalog/product/cache
 matTwo.save!
 
 matThree = Material.new(
-  name: "ski salomon 2010",
-  description: "ski utilisé environ 2 mois",
-  # available = true,
-  category: "ski"
+  name: "Skis Salomon 2010",
+  description: "Skis utilisés environ 2 mois. Comme neuf. Visible sur demande sur Paris si besoin. Possibilité de conseils si nécessaire. Bon ride!",
+  available = true,
+  category: "ski",
+  price: "18.00"
 )
 matThree.user_id = martin.id
 matThree.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543405478/ac9gk9p9qpiamitlmztz.jpg"
@@ -123,10 +76,11 @@ matThree.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v
 matThree.save!
 
 matFour = Material.new(
-  name: "skateboard princess",
-  description: "skakeboard en bonne état ayant servi environ 50h",
-  # available = true,
-  category: "skateboard"
+  name: "Skateboard Princess",
+  description: "Skateboard en bon état ayant servi environ 50h. Très bon état général, dispo à domicile. Equippement de protection égaelement dispo si besoin.",
+  available = true,
+  category: "skateboard",
+  price: "19.00"
 )
 matFour.user_id = thibault.id
 matFour.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543414749/max-tarkhov-737999-unsplash.jpg"
@@ -157,30 +111,67 @@ locationTwo = Location.new(
   start_date: Date.today,
   end_date: Date.today
 )
-# locationTwo.duration = (locationTwo.maxDate - locationTwo.minDate).to_i
+
 locationTwo.material_id = matTwo.id
-# locationOne.total_price = (matOne.daily_price * locationOne.duration).to_i
+
 locationTwo.user_id = martin.id
 locationTwo.save!
-# puts "Wow martin a loué son matériel à thibault from #{locationOne.minDate} to #{locationOne.maxDate}"
- # for #{bookingOne.total_price}
 
 
-# puts "Creating a review from Benoit about jeremy phone"
-# reviewOne = Review.new(
-#   content: "#{Faker::FamousLastWords.last_words} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, corporis, commodi pariatur autem sunt earum vitae accusantium deleniti illo architecto non dolor necessitatibus omnis, tempora voluptatem aliquid quibusdam. Eius, vero! ",
-#   star: 4
-#   )
-# reviewOne.booking_id = mobOne.user_id
-# reviewOne.save!
 
-# puts "Review created by Benoit"
 
-# puts "Creating a booking from Chris phones to Cecile."
-# reviewTwo = Review.new(
-#   content: "#{Faker::FamousLastWords.last_words} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, corporis, commodi pariatur autem sunt earum vitae accusantium deleniti illo architecto non dolor necessitatibus omnis, tempora voluptatem aliquid quibusdam. Eius, vero! ",
-#   star: 5
-#   )
-# reviewTwo.booking_id = mobTwo.user_id
-# reviewTwo.save!
-# puts "Review created by Cecile "
+review1 = MaterialReview.new(
+  rating: 5
+  description: "Excellent matos, et très bon état, proprio au top"
+  material_id: 1
+  )
+review2 = MaterialReview.new(
+  rating: 4
+  description: "Matériel en bon état d'usage, en revanche voir a affuter les ski, propiétaire charmante"
+  material_id: 1
+  )
+review3 = MaterialReview.new(
+  rating: 3
+  description: "Un peu déçu par ces skis, il manque de rigidité, pour debutant. Le propriétaire avait oublié de me le dire"
+  material_id: 2
+  )
+review4 = MaterialReview.new(
+  rating: 5
+  description: "Très bon surf, la neige en plus était au top, l'expertise de son propriétaire m'a été utile. Un grand merci je reviendrai"
+  material_id: 2
+  )
+review5 = MaterialReview.new(
+  rating: 2
+  description: "Matos en état d'usure assez avancé !! dommage !! cela gâche tout"
+  material_id: 3
+  )
+review6 = MaterialReview.new(
+  rating: 1
+  description: "Horrible !!!  le propietaire n'est pas du tout sympa et son matériel est hors d'usage !!! A FUIR !!!!!"
+  material_id: 3
+  )
+review7 = MaterialReview.new(
+  rating: 4
+  description: "Excellent matos, la propriétaire est de plus très agréable"
+  material_id: 4
+  )
+review8 = MaterialReview.new(
+  rating: 5
+  description: "Très content de ma location, je suis très content, A RECOMMANDER les yeux fermés."
+  material_id: 4
+  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
