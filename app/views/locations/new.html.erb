@@ -2,14 +2,16 @@
   <h1>Réserve ce matériel</h1>
 </div>
 
+
+
 <div class="page-container">
-  <div class="container">
+  <div class="container" style="width: 400px; margin: 0 auto;">
     <p> <%=  @material.description %></p>
+
     <%= simple_form_for [@material, @location] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.button :submit, class: "btn-form btn-primary" %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.button :submit, "Create location", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
-
