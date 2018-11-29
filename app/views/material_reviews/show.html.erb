@@ -1,0 +1,10 @@
+<div class="page-banner", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
+    <h1>Note de ce matériel</h1>
+</div>
+
+<div class="recap-container" text-align="center">
+  <h2>Review de : <%= @material_review.material.name %></h2>
+  <p>Produit: <%= @material_review.material.name %></p>
+  <p>Description: <%= @material_review.material.description %></p>
+  <p>Note: <%= @material_review.rating %></p>
+</div>
