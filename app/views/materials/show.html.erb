@@ -6,7 +6,9 @@
  <div class="profile text-center">
        <div class="main">
           <div class="main-content">
-          <%= cl_image_tag @material.photo, width: 200%>
+
+            <%= cl_image_tag @material.photo, width: 200%>
+
            <h2> <%= @material.name %></h2>
            <h3><font color="#7dccab"><%= @material.price %> €</font color></h3>
           <p> <%= @material.category %></p>
@@ -16,8 +18,9 @@
           <% if policy(@material).destroy? %>
       <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
            <% end %>
-      <% if policy(@material.locations.new).new? %>
-      <%= link_to "Réserver", new_material_location_path(@material), class: "btn btn-success"  %>
+
+    <% if policy(@material.locations.new).new? %>
+    <%= link_to "Réserver", new_material_location_path(@material), class: "btn btn-success"  %>
     <% end %>
         </div>
       </div>
