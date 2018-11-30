@@ -1,12 +1,18 @@
-<div class="page-banner", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
+<div class="small-banner", style="background-image: url(<%= asset_path 'ski.jpg' %>), linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 40%)">
+  <h1>Merci et à très vite!</h1>
 </div>
 
-<div class="recap-container" text-align="center">
-  <h2>Récapitulatif commande:</h2>
-  <p>Produit: <%= @location.material.name %></p>
-  <p>Description: <%= @location.material.description %></p>
-  <p>Début: <%= @location.start_date %></p>
-  <p>Fin: <%= @location.end_date %></p>
-  <p>Prix: <%= @location.material.price %> €</p>
-  <h2>Merci et à très vite!</h2>
+<div class="container">
+  <div class="card" style="width: auto; height: 300px; color:black;margin: 15px;padding: 5px;">
+    <div class="card-body" style="color: black; margin: 15px;" >
+      <h3 class="card-title" style="font-size: 25px">Récapitulatif commande:</h3>
+      <p>Produit: <%= @location.material.name %></p>
+      <p>Description: <%= @location.material.description %></p>
+      <p>Début: <%= @location.start_date %></p>
+      <p>Fin: <%= @location.end_date %></p>
+      <p>Prix: <%= @location.material.price %> €</p>
+    </div>
+  </div>
 </div>
+
+
