@@ -20,9 +20,6 @@
   </div>
 </div> -->
 
-
-
-
  <h2 class="text-center">Vos objets actuellement en location</h2>
 
 
@@ -33,7 +30,8 @@
 
       <!-- <div class="cards"> -->
         <div class="card">
-          <div class="card-body" style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
+          <div class="card-body" style="background-image:  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.2)), url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
+
               <div class="card-description">
               <h2><%= material.name %></h2>
               </div>
@@ -50,11 +48,28 @@
       </div>
     <% end %>
       <!-- </div> -->
-
   </div>
-
+</div>
+ <!--  <br />
+ -->
   <div class="container-fluid">
   <div class="row text-center">
     <%= link_to "Ajouter un nouveau matériel", new_material_path(@material), class: "btn btn-success" %>
   </div>
   </div>
+</div>
+
+<br />
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Sport BnB made this footer with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>

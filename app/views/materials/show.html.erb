@@ -1,7 +1,8 @@
-  <div class="small-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),   url(<%= cl_image_path('louer-matos_1.jpg') %>);">
-    <h2> <%= @material.name %></h2>
+  <div class="small-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @material.photo.present? ? cl_image_path(@material.photo) : "" %>')">
+    <h1> Mon matériel en location</h1>
+      <%= @material.name %>
+    </h1>
   </div>
-
 
 <div class="page-container">
  <div class="profile text-center">
@@ -111,3 +112,15 @@
     <p> <%= @material.category %></p> -->
 
 
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Sport BnB made this footer with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
