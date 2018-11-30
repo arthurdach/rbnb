@@ -17,9 +17,9 @@
 //   position: relative;
 // }
 
-// .card:hover {
-//     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-// }
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 // .card-link {
 //   position: absolute;
 //   top: 0;
@@ -125,6 +125,8 @@
   color: rgba(0,0,0,0.4);
   font-size: 12px;
 }
+
+
 
 .card-footer .controls {
   display: flex;
