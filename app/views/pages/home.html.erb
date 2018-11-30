@@ -53,20 +53,20 @@
 <% end %>
 <div class='page-container'>
 <!--     <p>Search bar</p>-->
-  <div class="cards">
-    <ul>
+  <div class="home-cards">
+    <div class="row">
       <% @materials.each do |material| %>
-        <div
-          class="card col-xs-3",
-
-          style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
-           <div class="container">
-            <p style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0, 0.7); font-size: 24px"><%= material.name %></p>
+          <div class="col-xs-3">
+            <div class="home-card" style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
+              <%= link_to material_path(material) do  %>
+                <div class="text-home-card">
+                  <p><%= material.name %></p>
+                </div>
+              <% end %>
+            </div>
           </div>
-          <%= link_to "", material_path(material), class: "card-link" %>
-        </div>
       <% end %>
-      </ul>
+    </div>
   </div>
 </div>
 

@@ -40,6 +40,9 @@
 .cards {
   display: flex;
 }
+.home-cards {
+  width : 100%;
+}
 
 .card {
   flex: 1 1 auto;
@@ -48,6 +51,22 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
 }
+.home-card {
+  background-size :cover;
+  height :220px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  p {
+    bottom: 10px;
+    color: white;
+    position: absolute;
+    left: 20px;
+    font-size: 23px;
+    text-shadow: 1px -1px 10px #3c763d;
+  }
+}
+
 
 .card-body {
     height: 180px;
