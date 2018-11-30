@@ -33,9 +33,9 @@
         </div>
       </div>
        <div class="stat">
-        <div class="stat-content">
-          <h3><font color="#7dccab">108€</font color></h3>
-          <p>revenus perçus</p>
+        <div class="fun">
+          <h3><font color="#7dccab">YES</font color></h3>
+          <p>ça c'est un petit effet whaou ;)</p>
         </div>
       </div>
      <div class="stat">
@@ -66,23 +66,7 @@
       </div>
 
 
-<!--       <% @reviews.each do |review|%>
-      Note: <%= review.rating.times do %>
-        <span class="fa fa-star checked"></span>
-      <% end %>
-          <br />
-      Commentaire: <%= review.description %>
-          <br />
-          <br />
-      <% end %>
-    <br /> -->
 
-   <!--  <% if policy(@material).edit? %>
-      <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
-    <% end %>
-    <% if policy(@material).destroy? %>
-      <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
-    <% end %> -->
     <% if policy(@material.locations.new).new? %>
       <%= link_to "Réserver", new_material_location_path(@material), class: "btn btn-success"  %>
     <% end %>
@@ -96,20 +80,7 @@
 </div>
 
 
-<!-- <div class="page-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8">
-         <h1> <%= @material.name %></h1>
-        <div class="card-show text-align-center">
-            <p> <%= @material.description %></p>
-            <p> <%= @material.price %> €</p>
-        </div>
-      </div>
-    </div>
-   </div>
-</div>
-    <p> <%= @material.category %></p> -->
+
 
 
 <div class="footer">
