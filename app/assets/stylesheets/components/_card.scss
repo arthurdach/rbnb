@@ -74,7 +74,7 @@
 
 .card-description h2 {
   font-family: "Roboto", sans-serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .card-user {
@@ -95,9 +95,9 @@
 
 .card-footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 10px;
+  height: 130px;
 }
 
 .card-footer p {
@@ -107,7 +107,6 @@
 
 .card-footer .controls {
   display: flex;
-  align-items: center;
 }
 
 .text-center {
@@ -126,22 +125,22 @@
 
 h1 {
   font-family: "Varela", sans-serif;
+   margin-top: 0;
 }
 
-h2 {
-    margin-bottom: 40px;
-}
+// h2 {
+//    margin-bottom: 40px;
+// }
 
 body {
   background: #fafafa;
   margin: 0;
-  margin-bottom: 100px;
   font-family: 'Varela Round', sans-serif;
 }
 
-div {
-    display: block;
-}
+// div {
+//     display: block;
+// }
 
 p {
     display: block;
