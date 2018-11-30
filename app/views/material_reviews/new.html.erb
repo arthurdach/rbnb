@@ -2,9 +2,9 @@
   <h1>Note ce matériel</h1>
 </div>
 
-<h3><%= @material.name %></h3>
-<div class="page-container">
-  <div class="container">
+<h3 style="text-align: center"><%= @material.name %></h3>
+<div class="page-container" style="margin-bottom: 30px" >
+  <div class="container" style="width: 700px">
     <%= simple_form_for [@material, @material_review] do |f| %>
       <%= f.input :rating %>
       <%= f.input :description %>
