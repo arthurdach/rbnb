@@ -1,38 +1,49 @@
 <div class="home-wrapper", style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('banner.jpg') %>);">
   <h1>LOCATION DE MATERIEL DE SPORT <br >ENTRE PARTICULIERS</h1>
-
   <br >
-
   <form class="form-inline" class="text-center">
     <label class="sr-only" for="inlineFormInput">Categorie</label>
-
     <%= form_tag materials_path, method: :get do %>
       <%= text_field_tag :category,
         params[:category],
         class: "form-control",
         placeholder: "Catégorie ?"
       %>
-
       <%= text_field_tag :address,
         params[:address],
         class: "form-control",
         placeholder: "Lieu ?"
       %>
-
       <%= button_tag "Rechercher", class: "btn btn-success" %>
     <% end %>
   </div>
 </form>
 
+<% if params[:category].present? || params[:address].present? %>
+  <h2 class="text-center">YEAHHH !!! Voilà le matériel de dispo dans ta zone de recherche</h2>
+<div class="page-container">
+  <div class="home-cards">
+    <br />
+    <div class="row">
+      <% @materials.each do |material| %>
+          <div class="col-xs-3">
+            <div class="home-card" style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
+              <%= link_to material_path(material) do  %>
+                <div class="text-home-card">
+                  <p><%= material.name %></p>
+                </div>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  <div id="map" data-markers=<%= @markers.to_json %> data-mapbox-api-key=<%= ENV["MAPBOX_API_KEY"] %> style="width: 100%; height: 400px">
+  </div>
+  </div>
 </div>
 
-<% if params[:category].present? || params[:address].present? %>
-  <h2 class="text-center">WAOU !!!! Voilà le matériel de dispo dans ta zone de recherche</h2>
-
 <% else %>
-<% end %>
 
-<div class="containe">
 <div class="page-container-icone">
   <div class="icone text-center">
    <ul class="list-inline">
@@ -54,13 +65,9 @@
    </ul>
  </div>
 </div>
-
-
 <div class="page-container">
   <div class="home-cards">
-    <br />
     <h2 class="text-center">Découvrez nos derniers produits</h2>
-    <br />
     <br />
     <div class="row">
       <% @materials.each do |material| %>
@@ -81,6 +88,8 @@
     <% end %>
   </div>
 </div>
+<% end %>
+
 
 <div class="container-fluid">
   <div class="row">
