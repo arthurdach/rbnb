@@ -49,6 +49,8 @@
 
 <% if params[:category].present? || params[:address].present? %>
   <h2 class="text-center">WAOU !!!! Voilà le matériel de dispo dans ta zone de recherche</h2>
+  <div id="map" data-markers=<%= @markers.to_json %> data-mapbox-api-key=<%= ENV["MAPBOX_API_KEY"] %> style="width: 50%; height: 400px">
+  </div>
 <% else %>
   <h2 class="text-center">Découvrez nos derniers produits</h2>
 <% end %>
