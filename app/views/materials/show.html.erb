@@ -6,7 +6,9 @@
  <div class="profile text-center">
        <div class="main">
           <div class="main-content">
-          <img src="http://res.cloudinary.com/dscu7dmwa/image/upload/v1543511001/nm0xvy2qtlmm9bh6lscm.jpg" alt="" width="200" height="150" class="img-rounded">
+            <%= cl_image_tag @material.photo, width: 200%>
+<!--           <img src="http://res.cloudinary.com/dscu7dmwa/image/upload/v1543511001/nm0xvy2qtlmm9bh6lscm.jpg" alt="" width="200" height="150" class="img-rounded"> -->
+ <!--        <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @material.photo %>')"> -->
            <h2> <%= @material.name %></h2>
            <h3><font color="#7dccab"><%= @material.price %> €</font color></h3>
           <p> <%= @material.category %></p>
@@ -68,12 +70,12 @@
     <% if policy(@material.locations.new).new? %>
       <%= link_to "Réserver", new_material_location_path(@material), class: "btn btn-success"  %>
     <% end %>
-    <% if policy(@material.locations.new).new? %>
-      <%= link_to "Noter ce matériel", new_material_material_review_path(@material), class: "btn btn-primary"  %>
-    <% end %>
   </div>
 
-  <div id="map" data-markers=<%= @markers.to_json %> data-mapbox-api-key=<%= ENV["MAPBOX_API_KEY"] %> style="width: 50%; height: 400px">
+  <br />
+
+
+  <div id="map" data-markers=<%= @markers.to_json %> data-mapbox-api-key=<%= ENV["MAPBOX_API_KEY"] %> style="width: 100%; height: 300px">
   </div>
 </div>
 
