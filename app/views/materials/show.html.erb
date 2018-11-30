@@ -1,14 +1,57 @@
-<div class="card col-xs-3", style="background-image: url('<%= @material.photo.present? ? cl_image_path(@material.photo, height: 300, width: 400, crop: :fill) : "" %>')">
-</div>
+  <div class="small-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),   url(<%= cl_image_path('louer-matos_1.jpg') %>);">
+    <h2> <%= @material.name %></h2>
+  </div>
+
 
 <div class="page-container">
-  <div class="container">
-    <h1> <%= @material.name %></h1>
-    <p> <%= @material.category %></p>
-    <p> <%= @material.description %></p>
-    <p> <%= @material.price %> €</p>
-    
-      <% @reviews.each do |review|%>
+ <div class="profile text-center">
+       <div class="main">
+          <div class="main-content">
+          <img src="http://res.cloudinary.com/dscu7dmwa/image/upload/v1543511001/nm0xvy2qtlmm9bh6lscm.jpg" alt="" width="200" height="150" class="img-rounded">
+           <h2> <%= @material.name %></h2>
+           <h3><font color="#7dccab"><%= @material.price %> €</font color></h3>
+          <p> <%= @material.category %></p>
+          <% if policy(@material).edit? %>
+      <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
+          <% end %>
+          <% if policy(@material).destroy? %>
+      <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
+           <% end %>
+        </div>
+      </div>
+      <div class="description">
+      <div class="description-content">
+          <h4>Description produit</h4>
+          <p> <%= @material.description %></p>
+        </div>
+      </div>
+     <div class="stat">
+      <div class="stat-content">
+          <h3><font color="#7dccab">6</font color></h3>
+          <p>nombre de locations</p>
+        </div>
+      </div>
+       <div class="stat">
+        <div class="stat-content">
+          <h3><font color="#7dccab">108€</font color></h3>
+          <p>revenus perçus</p>
+        </div>
+      </div>
+     <div class="stat">
+         <div class="stat-content">
+          <h3><font color="#7dccab">85 fois</font color></h3>
+          <p>materiel consulté</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+   <div class="card-show col-md-12">
+          <h4>Commentaires </h4>
+          <br />
+           <% @reviews.each do |review|%>
       Note: <%= review.rating.times do %>
         <span class="fa fa-star checked"></span>
       <% end %>
@@ -17,14 +60,28 @@
           <br />
           <br />
       <% end %>
-    <br />
-    
-    <% if policy(@material).edit? %>
+        </div>
+      </div>
+      </div>
+
+
+<!--       <% @reviews.each do |review|%>
+      Note: <%= review.rating.times do %>
+        <span class="fa fa-star checked"></span>
+      <% end %>
+          <br />
+      Commentaire: <%= review.description %>
+          <br />
+          <br />
+      <% end %>
+    <br /> -->
+
+   <!--  <% if policy(@material).edit? %>
       <%= link_to "Modifier", edit_material_path(@material), class: "btn btn-success" %>
     <% end %>
     <% if policy(@material).destroy? %>
       <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
-    <% end %>
+    <% end %> -->
     <% if policy(@material.locations.new).new? %>
       <%= link_to "Réserver", new_material_location_path(@material), class: "btn btn-success"  %>
     <% end %>
@@ -37,5 +94,20 @@
   </div>
 </div>
 
+
+<!-- <div class="page-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8">
+         <h1> <%= @material.name %></h1>
+        <div class="card-show text-align-center">
+            <p> <%= @material.description %></p>
+            <p> <%= @material.price %> €</p>
+        </div>
+      </div>
+    </div>
+   </div>
+</div>
+    <p> <%= @material.category %></p> -->
 
 

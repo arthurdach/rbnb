@@ -1,34 +1,157 @@
-.cards{
+// .cards{
+//   display: flex;
+//   align-content: space-around;
+//   justify-content: space-around;
+// }
+
+// .card {
+//   width: 300px;  /* Or whatever */
+//   height: 300px; /* Or whatever */
+//   margin: 1px thin solid lightgrey;
+//   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   margin: 20px;
+//   background-size: cover !important;
+//   background-position: center;
+//   color: white;
+//   position: relative;
+// }
+
+// .card:hover {
+//     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+// }
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index: 2;
+//   background: black;
+//   opacity: 0;
+// }
+
+.card-show {
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background: white;
+    border-radius: 2px;
+  }
+
+.cards {
   display: flex;
-  align-content: space-around;
-  justify-content: space-around;
 }
 
 .card {
-  width: 300px;  /* Or whatever */
-  height: 300px; /* Or whatever */
-  margin: 1px thin solid lightgrey;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 5px;
-  margin: 20px;
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
+  flex: 1 1 auto;
+  margin: 10px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
 }
 
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.card-body {
+    height: 180px;
+    background-size: cover;
+    color: white;
+    position: relative;
 }
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
 .card-link {
   position: absolute;
   top: 0;
   bottom: 0;
+  left: 0;
   right: 0;
   width: 100%;
   z-index: 2;
   background: black;
   opacity: 0;
 }
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.card-footer p {
+  color: rgba(0,0,0,0.4);
+  font-size: 12px;
+}
+
+.card-footer .controls {
+  display: flex;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.container-form {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+h1 {
+  font-family: "Varela", sans-serif;
+}
+
+h2 {
+    margin-bottom: 40px;
+}
+
+body {
+  background: #fafafa;
+  margin: 0;
+  margin-bottom: 100px;
+  font-family: 'Varela Round', sans-serif;
+}
+
+div {
+    display: block;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
 
 

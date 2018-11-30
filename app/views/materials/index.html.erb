@@ -1,10 +1,9 @@
- <div class="mon-materiel">
 
   <div class="small-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path('louer-matos_1.jpg') %>);">
     <h1> Mon matériel en location</h1>
   </div>
 
-  <div class="container">
+<!--   <div class="container">
   <div class="cards">
       <% @materials.each do |material| %>
         <div class="card col-xs-3", style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
@@ -19,17 +18,41 @@
         </div>
       <% end %>
   </div>
-</div>
+</div> -->
 
- <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+
+
+
+ <h2 class="text-center">Vos objets actuellement en location</h2>
+
+
+<div class="container">
+   <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <% @materials.each do |material| %>
+      <div class="cards">
+        <div class="card">
+          <div class="card-body" style="background-image: url('<%= material.photo.present? ? cl_image_path(material.photo) : "" %>')">
+              <div class="card-description">
+              <h2><%= material.name %></h2>
+            </div>
+            <%= link_to "", material_path(material), class: "card-link" %>
+          </div>
+          <div class="card-footer">
+            <p><strong><%= material.category %></strong>  <br /> <%= material.description %></p>
+            <div class="controls">
+               <p><font color="#7dccab"><%= material.price %> €</font color></p>
+            </div>
+          </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+
+  <div class="container-fluid">
+  <div class="row text-center">
+    <%= link_to "Ajouter un nouveau matériel", new_material_path(@material), class: "btn btn-success" %>
   </div>
-</div>
-</div>
+  </div>
