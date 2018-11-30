@@ -1,7 +1,5 @@
   <div class="small-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @material.photo.present? ? cl_image_path(@material.photo) : "" %>')">
-    <h1> Mon matériel en location</h1>
-      <%= @material.name %>
-    </h1>
+    <h1><%= @material.name %></h1>
   </div>
 
 <div class="page-container">

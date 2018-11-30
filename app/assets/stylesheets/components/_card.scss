@@ -37,14 +37,13 @@
     border-radius: 2px;
   }
 
-
 .cards {
   display: flex;
 }
+
 .home-cards {
   width : 100%;
 }
-
 
 .card {
   flex: 1 1 auto;
@@ -53,12 +52,14 @@
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
 }
+
 .home-card {
   background-size :cover;
   height :220px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
+  margin-bottom: 20px;
   p {
     bottom: 10px;
     color: white;
@@ -144,6 +145,12 @@
 .container-form {
   max-width: 1000px;
   margin: 50px auto;
+}
+
+.page-container-icone {
+   max-width: 1000px;
+   margin: 50px auto;
+   background: #fafafa;
 }
 
 h1 {
