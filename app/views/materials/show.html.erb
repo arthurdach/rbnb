@@ -6,9 +6,8 @@
  <div class="profile text-center">
        <div class="main">
           <div class="main-content">
-            <%= image_path  %>
-        <!--   <img src="http://res.cloudinary.com/dscu7dmwa/image/upload/v1543511001/nm0xvy2qtlmm9bh6lscm.jpg" alt="" width="200" height="150" class="img-rounded"> -->
-       <!--  <div style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @material.photo.present? ? cl_image_path(@material.photo) : "" %>')"> -->
+            <%= cl_image_tag @material.photo, width: 200%>
+
            <h2> <%= @material.name %></h2>
            <h3><font color="#7dccab"><%= @material.price %> €</font color></h3>
           <p> <%= @material.category %></p>
@@ -17,6 +16,9 @@
           <% end %>
           <% if policy(@material).destroy? %>
       <%= link_to "Supprimer", material_path(@material),method: :delete, class: "btn btn-danger" %>
+           <% end %>
+           <% if policy(@material.locations.new).new? %>
+             <%= link_to "Réserver", new_material_location_path(@material), class: "btn btn-success"  %>
            <% end %>
         </div>
       </div>
@@ -65,11 +67,6 @@
       </div>
       </div>
 
-
-
-    <% if policy(@material.locations.new).new? %>
-      <%= link_to "Réserver", new_material_location_path(@material), class: "btn btn-success"  %>
-    <% end %>
   </div>
 
   <br />
