@@ -62,14 +62,14 @@ matTwo.remote_photo_url = "http://glisse-proshop.com/media/catalog/product/cache
 matTwo.save!
 
 matThree = Material.new(
-  name: "Skis Salomon 2010",
+  name: "Skis Black Crows 2010",
   description: "Skis utilisés environ 2 mois. Comme neuf. Visible sur demande sur Paris si besoin. Possibilité de conseils si nécessaire. Bon ride!",
   available: :true,
   category: "ski",
   price: "18.00"
 )
 matThree.user_id = martin.id
-matThree.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543405478/ac9gk9p9qpiamitlmztz.jpg"
+matThree.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543577459/black-crows-atris-skis-2018-178-base.jpg"
 
 matThree.save!
 
@@ -85,7 +85,55 @@ matFour.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1
 
 matFour.save!
 
-puts "4 materials saved"
+matFive = Material.new(
+  name: "Vélo descente Cross-X",
+  description: "Vélo de descente de la marque Cross-X. Taille Homme, idéal pour débutant. Très bon état général, dispo à domicile",
+  available: :true,
+  category: "velo",
+  price: "30.00"
+)
+matFive.user_id = vincent.id
+matFive.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543576928/Photos_stt.png"
+
+matFive.save!
+
+matSix = Material.new(
+  name: "Paddle Wave-Guru 12'6",
+  description: "Paddle de vague en excellent état. Longueur: 12'6 ft, préférable utilisateurs expérimentés. Bon état général, léger pocks sur le rail droit.",
+  available: :true,
+  category: "paddle",
+  price: "45.00"
+)
+matSix.user_id = arthur.id
+matSix.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543577040/noosa-pro-fone.jpg"
+
+matSix.save!
+
+matSeven = Material.new(
+  name: "Longboard 9.6 Buster",
+  description: "Loue beau Longboard Buster. Taille femme, idéal pour débutant. Quelques pocks d'usure, mais bon état général",
+  available: :true,
+  category: "surf",
+  price: "30.00"
+)
+matSeven.user_id = thibault.id
+matSeven.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543577230/buster-blunt-6-0-tabla-de-surf-verde.jpg"
+
+matSeven.save!
+
+matEight = Material.new(
+  name: "Shortboard 5'9 Lost",
+  description: "Surf de vagues de la marque Lost. Taille Homme, pour surfer intermmédiaire. Très bon état général, dispo à domicile",
+  available: :true,
+  category: "surf",
+  price: "20.00"
+)
+matEight.user_id = martin.id
+matEight.remote_photo_url = "https://res.cloudinary.com/dscu7dmwa/image/upload/v1543577544/V2-1.jpg"
+
+matEight.save!
+
+puts "8 materials saved"
 
 puts 'Creating a locations from vincent materials to arthur.'
 
@@ -156,5 +204,51 @@ review8 = MaterialReview.create!(
   material_id: matFour.id
   )
 
+review9 = MaterialReview.create!(
+  rating: 5,
+  description: "Excellent matos, et très bon état, proprio au top",
+  material_id: matFive.id
+  )
 
+review10 = MaterialReview.create!(
+  rating: 3,
+  description: "Matériel en bon état d'usage, en revanche voir a affuter les ski, propiétaire charmante",
+  material_id: matFive.id
+  )
 
+review11 = MaterialReview.create!(
+  rating: 4,
+  description: "Excellent matos, la propriétaire est de plus très agréable",
+  material_id: matSix.id
+  )
+
+review12 = MaterialReview.create!(
+  rating: 5,
+  description: "Très content de ma location, je suis très content, A RECOMMANDER les yeux fermés.",
+  material_id: matSix.id
+  )
+review13 = MaterialReview.create!(
+  rating: 1,
+  description: "Horrible !!!  le propietaire n'est pas du tout sympa et son matériel est hors d'usage !!! A FUIR !!!!!",
+  material_id: matSeven.id
+  )
+
+review14 = MaterialReview.create!(
+  rating: 4,
+  description: "Excellent matos, la propriétaire est de plus très agréable",
+  material_id: matSeven.id
+  )
+
+review15 = MaterialReview.create!(
+  rating: 5,
+  description: "Très bon surf, la neige en plus était au top, l'expertise de son propriétaire m'a été utile. Un grand merci je reviendrai",
+  material_id: matEight.id
+  )
+
+review16 = MaterialReview.create!(
+  rating: 2,
+  description: "Matos en état d'usure assez avancé !! dommage !! cela gâche tout",
+  material_id: matEight.id
+  )
+
+puts "16 reviews created"
