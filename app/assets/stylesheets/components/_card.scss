@@ -37,15 +37,15 @@
     border-radius: 2px;
   }
 
-.cards {
-  display: flex;
-}
+// .cards {
+//   display: flex;
+// }
 
 .card {
   flex: 1 1 auto;
   margin: 10px;
   border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
 }
 
@@ -72,6 +72,11 @@
   left: 10px;
 }
 
+.card-description h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+}
+
 .card-user {
   position: absolute;
   right: 10px;
@@ -86,8 +91,6 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
-  opacity: 0;
 }
 
 .card-footer {
